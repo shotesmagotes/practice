@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Yelp</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/yelp.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <nav id="yelp-nav" class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand no-padding no-margin" href="#"><img id="yelp-logo" src="images/header_logo.png"/></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-left navbar-form" role="Find restaurants, bars...">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div> 
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="location"><a href="#">in <span>Houston</span> <span>(Click to change location)</span></a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="splash-img">
+            <div class="location-title">Houston</div>
+            <a class="location-change">(Click here to change location)</a>
+            <p class="location-desc">People use Yelp to search for everything from the city's tastiest burger to the most renowned cardiologist. What will you uncover in your neighborhood?</p>
+            <div class="sign-in-row">
+                <button class="sign-in btn btn-default">Create Your Free Account</button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="yelp-best">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="best-title"><h4>Discover the best of Yelp in Houston.</h4></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#">Beauty & Spas</a></li>
+                            <li role="presentation"><a href="#">Shopping</a></li>
+                            <li role="presentation">
+                                <a href="#best-nightlife" aria-controls="best-nightlife" role="tab" data-toggle="tab">Nightlife</a>
+                            </li>
+                            <li role="presentation" class="active">
+                                <a href="#best-restaurants" aria-controls="best-restaurants" role="tab" data-toggle="tab">Restaurants</a>
+                            </li>
+                            <li role="presentation"><a href="#">Food</a></li>
+                            <li role="presentation"><a href="#">Home Services</a></li>
+                            <li role="presentation"><a href="#">Health & Medical</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">    
+                <div class="col-md-12 yelp-best-list tab-content">    
+                    <div role="tabpanel" id="best-restaurants" class="tab-pane active">
+                        <div class="col-md-1 menu-left"></div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Mascalzone</h5>
+                                <div class="rating">
+                                    <div class="star-img star-4">
+                                    </div>
+                                </div>
+                                <p>They also have homemade gelato in a couple different flavors that vary and is also very delicious.</p>    
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Kitchen 713</h5>
+                                <div class='rating'>
+                                    <div class="star-img star-4">
+                                    </div>
+                                </div>
+                                <p>Check it out ! The gumbo was extraordinary and the peach cobbler was the best I've ever had.</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Julep</h5>
+                                <div class="rating">
+                                    <div class="star-img star-4">
+                                    </div>
+                                </div>
+                                <p>Julep is the newest bar from the team at Clumsy Butcher (Anvil, Hey Merchant, Pastry War, Blacksmith).</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Oporto Fooding & Wine</h5>
+                                <div class="rating">
+                                    <div class="star-img star-4">  
+                                    </div>
+                                </div>
+                                <p>Grilled octopus, wood grilled sardines, curry chicken empanadas.</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Weights + Measures</h5>
+                                <div class="rating">
+                                    <div class="star-img star-3half">   
+                                    </div>
+                                </div>
+                                <p>We had avocado toast, mushroom toast and the French toast, all were great!</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 menu-right"></div>
+                    </div>
+                    <div role="tabpanel" id="best-nightlife" class="tab-pane">
+                        <div class="col-md-1 menu-left"></div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Poison Girl</h5>
+                                <div class="rating">
+                                    <div class="star-img star-4">
+                                    </div>
+                                </div>
+                                <p>I LOVED that they have a wall full of pinball machines.</p>    
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Miller Outdoor Theatre</h5>
+                                <div class='rating'>
+                                    <div class="star-img star-4">
+                                    </div>
+                                </div>
+                                <p>Make sure to bring a nice picnic as well.</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Double Trouble Caffeine & Cocktails</h5>
+                                <div class="rating">
+                                    <div class="star-img star-4">
+                                    </div>
+                                </div>
+                                <p>As far as cocktails go, this place makes me so happy.</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>The Big Easy Social and Pleasure Club</h5>
+                                <div class="rating">
+                                    <div class="star-img star-4">  
+                                    </div>
+                                </div>
+                                <p>Hole in a wall bar with awesome live blues music every night.</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="rest-img ">
+                                <h5>Little Woodrow's</h5>
+                                <div class="rating">
+                                    <div class="star-img star-3half">   
+                                    </div>
+                                </div>
+                                <p>Turtle races are awesome and so much fun.</p>
+                                <div class="photo-box-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 menu-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="activity faded">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="activity-title">Make Your Yelp Known.</div>
+                    <p>From methinksnot to a woohoo!, rate a restaurant and write a review, or simply add a photo to share your experience.</p>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="recent-activity col-md-10">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row write-review">
+                                <h4>Your Review Awaits</h4>
+                                <form class="form-horizontal">
+                                    <div class="review-stars">
+                                        <fieldset class="star-rating-widget">
+                                            <ul class="stars-0">
+                                                <li><input id="rating-1" type="radio" name="rating" value="1"/></li>
+                                                <li><input id="rating-2" type="radio" name="rating" value="2"/></li>
+                                                <li><input id="rating-3" type="radio" name="rating" value="3"/></li>
+                                                <li><input id="rating-4" type="radio" name="rating" value="4"/></li>
+                                                <li><input id="rating-5" type="radio" name="rating" value="5"/></li>
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                    <div class="review-textbox">
+                                        <textarea class="review-textarea form-control" rows="5" placeholder="Type your review here..." autocomplete="off"></textarea>
+                                    </div> 
+                                    <button type="submit" class="review-button btn btn-default">Sign in and Post</button>
+                                    <a href="#">Cancel</a>
+                                </form>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row review-of-the-day">
+                                <h4>Review of the Day</h4>
+                                
+                                <img src="images/rotdphoto.jpg"/>
+                                <p><a><em>Vik P.</em></a> reviewed <a><em>King Chicken</em></a></p>
+                                <div class="rating"><div class="star-img star-4"></div></div>
+                                <p class="review">I normally don't venture out to this side of town, but I needed to take my car in for maintenance, I am glad that my mechanic's location allows me to spread my belly wings to new areas. The venue is located in a strip mall, nothing fancy about it.  I thought it was going to be more of a soul type of place but it turns out it has a Hispanic influence...<a>read more</a></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 no-padding">
+                            <div id="recent-posts">
+                                <h4>Recent Activity on Yelp</h4>
+                                <div class="row activity-section">
+                                    <div class="col-md-4 post">
+                                        <div class="post-wrap">
+                                            <header class="post-wrap-header"></header>
+                                            <div class="post-wrap-wrap">
+                                                <img class="post-user" src="images/recentpostuser1.jpg"/>
+                                                <p>Lisa added a photo for <a>Tan Tan Restaurant</a></p>
+                                                <img class="post-img img-rounded" src="images/recentpost1.jpg"/>
+                                                <p>Love the noodle dishes here. Best Chinese food in the area.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 post">
+                                        <div class="post-wrap">
+                                            <header class="post-wrap-header"></header>
+                                            <div class="post-wrap-wrap">
+                                                <img class="post-user" src="images/recentpostuser2.jpg"/>
+                                                <p>Maria S. added a photo for <a>Mi Tienda</a></p>
+                                                <img class="post-img img-rounded" src="images/recentpost2.jpg"/>
+                                                <p>One of many fresh fruit drinks (aguas frescas) available.  This is the only unsweetened agua fresca.  The rest are too sweet.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 post">
+                                        <div class="post-wrap">
+                                            <header class="post-wrap-header"></header>
+                                            <div class="post-wrap-wrap">
+                                                <img class="post-user" src="images/recentpostuser3.jpg"/>
+                                                <p>Mia W. wrote a review for <a>Big AL's Donuts & Tacos</a></p>
+                                                <div class="rating"><div class="star-img star-5"></div></div>
+                                                <p class="desc">Breakfast tacos are the jam here. They make light breakfast tacos too with spinach mushroom, egg, and whole wheat tortillas (add potato!).They will make small or large ones too. Call your order in ahead of time to avoid the wait.
+
+    They have a wide range of donuts, kolaches, desserts, pies, cakes, cookies, etc. during winter they make fun festive treats too.</p>
+                                                <div class="post-buttons">
+                                                    <button type="button" class="btn btn-default btn-xs useful-btn"><i class="ig-common i-ufc-useful-common"></i>Useful</button> 
+                                                    <button type="button" class="btn btn-default btn-xs useful-btn"><i class="ig-common i-ufc-funny-common"></i>Funny</button> 
+                                                    <button type="button" class="btn btn-default btn-xs useful-btn"><i class="ig-common i-ufc-cool-common"></i>Cool</button> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tools">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="features-title">
+                        Yelp and then some.
+                    </div>
+                    <p>Find out what's going on around you, create a list or talk to other Yelpers.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="yelp-features col-md-10">
+                    <div class="row">
+                        <div class="col-md-4 no-padding">
+                            <div class="yelp-events">
+                                <h4>Popular Events</h4>
+                                <div class="event">
+                                    <div class="event-img">
+                                        <img src="images/event1.jpg"/>
+                                    </div>
+                                    <div class="event-desc">
+                                        <a>Hotel Derek's Summer Film Series Float & Flick</a>
+                                        <date>Today, May 29, 5:00 pm</date>
+                                        <div class="interests">66 are interested</div>
+                                    </div>
+                                </div>
+                                <div class="event">
+                                    <div class="event-img">
+                                        <img src="images/event2.jpg"/>
+                                    </div>
+                                    <div class="event-desc">
+                                        <a>BCO Farmer's Market Bike Ride</a>
+                                        <date>Tomorrow, May 30, 8:00 am - 12:00 pm</date>
+                                        <div class="interests">18 are interested</div>
+                                    </div>
+                                </div>
+                                <div class="event">
+                                    <div class="event-img">
+                                        <img src="images/event3.jpg"/>
+                                    </div>
+                                    <div class="event-desc">
+                                        <a>The Platformit Show! At Aloft Hotel by the Galleria...</a>
+                                        <date>Today, May 29, 8:00 pm - 11:00 pm</date>
+                                        <div class="interests">10 are interested</div>
+                                    </div>
+                                </div>
+                                <a>More Events</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 no-padding">
+                            <div class="yelp-lists">
+                                <h4>Fresh Lists</h4>
+                                <div class="list">
+                                    <div class="list-img">
+                                        <img src="images/list1.jpg"/>
+                                    </div>
+                                    <div class="list-desc">
+                                        <a>Yelp 100 Challenge 2015</a>
+                                        <div class="desc">100 reviews in 365 days!</div>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <div class="list-img">
+                                        <img src="images/list2.jpg"/>
+                                    </div>
+                                    <div class="list-desc">
+                                        <a>Guns, Cars, and Sitars</a>
+                                        <div class="desc">Foods and adventures from the Indian subcontinent.</div>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <div class="list-img">
+                                        <img src="images/list3.jpg"/>
+                                    </div>
+                                    <div class="list-desc">
+                                        <a>Best patios and outdoor areas in Houston.</a>
+                                        <div class="desc">My favorite places to sip on an adult beverage or enjoy a meal in the...</div>
+                                    </div>
+                                </div>
+                                <a>More Lists</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 no-padding">
+                            <div class="yelp-talk">
+                                <h4>Today in Talk</h4>
+                                <div class="talk">
+                                    <div class="talk-img">
+                                        <img src="images/event1.jpg"/>
+                                    </div>
+                                    <div class="talk-desc">
+                                        <a>Take the last letter and create a new word</a>
+                                        <cat>Humor & Offbeat</cat>
+                                        <div class="updated">One minute ago</div>
+                                    </div>
+                                </div>
+                                <div class="talk">
+                                    <div class="talk-img">
+                                        <img src="images/event2.jpg"/>
+                                    </div>
+                                    <div class="talk-desc">
+                                        <a>Valet tipping?</a>
+                                        <cat>Local Questions & Answers</cat>
+                                        <div class="updated">21 minutes ago</div>
+                                    </div>
+                                </div>
+                                <div class="talk">
+                                    <div class="talk-img">
+                                        <img src="images/event3.jpg"/>
+                                    </div>
+                                    <div class="talk-desc">
+                                        <a>The walking dead</a>
+                                        <cat>Entertainment & Pop Culture</cat>
+                                        <div class="updated">42 minutes ago</div>
+                                    </div>
+                                </div>
+                                <a>More Talks</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="last"></section>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery-1.11.3.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.js"></script>
+        <script src="js/yelp.js"></script>
+    </body>
+</html>
