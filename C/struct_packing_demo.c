@@ -37,7 +37,7 @@ struct Data{ // Data is 16 bytes
 
 
 int main(int argc, char* argv[]){
-  int max_data = 0;
+  int max_data = 100;
 
   printf("sizeof struct Data: %lu\n", sizeof(struct Data));
 
@@ -49,12 +49,10 @@ int main(int argc, char* argv[]){
   printf("sizeof char: %lu\n", sizeof(char));
 
   printf("\n");
-  if (argc == 2){
-    max_data = atoi(argv[1]);
-    // Maybe there's a better way of doing this? 
-    size_t sdata = sizeof(struct DataCopy) - 2 * sizeof(char*) + 2 * (max_data) * sizeof(char); 
-    printf("sizeof struct Data calculated: %lu\n", sdata);
-  };
+
+  // Maybe there's a better way of doing this? 
+  size_t sdata = sizeof(struct AddressCopy) - 2 * sizeof(char*) + 2 * (max_data) * sizeof(char); 
+  printf("sizeof struct Address calculated: %lu\n", sdata);
   
   return 0;
 }
