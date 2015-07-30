@@ -12,7 +12,7 @@ Thumbs.db
 *.exe
 *.o
 *.so
-
+*.out
 
 *.log
 *.sql
