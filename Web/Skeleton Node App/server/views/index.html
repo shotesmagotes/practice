@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- views/partials/head.ejs -->
+        <meta charset="UTF-8">
+        <title>Development</title>
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>     
+        <link rel="stylesheet" href="assets/css/index.css"/>  
+    </head>
+    <body ng-app="loginApp" ng-controller="RootController">
+        <header>  <!--NAME CONTROLLER BEGINS-->
+            <nav id="nav-user" class="top-fixed top-nav" role="navigation">
+                <div class="nav-container">
+                    <div class="nav-menu-items">
+                        <a class="nav-brand" href="/">
+                            <div id="logo" class="round-edge"></div>
+                            
+                        </a>
+                        <div class="nav-menu-items-right" ng-controller="LoginController as login">
+                            <div ng-include src="$storage.logIn"></div>   
+                            <div><a href="/about">About</a></div>
+                            <script type="text/ng-template" id="logIn">
+                                <a ng-click="openLogin()">Log In</a>
+                            </script>
+                            <script type="text/ng-template" id="logOut">
+                                <a ng-click="logoutSubmit()">Log Out</a>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <!-- Requires button trigger for modal -->
+
+            <section class="intro-image">
+                <div class="background-layer">
+                    <div ng-include class="image-text-container {{ pageClass }}" src="imageTemplate">
+                        <!-- TEMPLATE DEPENDS ON USER LOG -->
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section class="intro-desc1 container">
+                <div class="first desc float-left">
+                    <div class="first-bundle vertical-middle">
+                        <h2>Description Header</h2>
+                        <p>Description text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum ante felis, pulvinar consectetur urna venenatis ac. Nunc ut posuere augue. Suspendisse rhoncus, nunc vitae gravida orci aliquam.</p>
+                    </div>
+                </div>
+                <div class="desc-img float-right"><div class="float-right grey-img"></div></div>
+            </section>
+            
+            <section class="intro-desc2 container">
+                <div class="desc-img float-left"><div class="float-left grey-img"></div></div>
+                 <div class="first desc float-right">
+                    <div class="first-bundle vertical-middle">
+                        <h2>Description Header</h2>
+                        <p>Description text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum ante felis, pulvinar consectetur urna venenatis ac. Nunc ut posuere augue. Suspendisse rhoncus, nunc vitae gravida orci aliquam.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+        
+        </footer>
+
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular.js"></script>
+        <script type="text/javascript" src="assets/js/ui-bootstrap-tpls-0.13.0.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular-route.min.js"></script>
+        <script type="text/javascript" src="assets/js/ngStorage.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular-animate.min.js"></script>
+        
+        <script type="text/javascript" src="assets/js/angular-apps.js"></script>
+        <script type="text/javascript" src="controllers/login-app-controller.js"></script> 
+        <script type="text/javascript" src="services/login-app-service.js"></script>      
+        <script type="text/javascript" src="directives/login-app-directive.js"></script>  
+
+    </body>
+</html>

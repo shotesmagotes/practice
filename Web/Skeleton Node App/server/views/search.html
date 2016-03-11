@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Development</title>
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>   
+        <link rel="stylesheet" href="assets/css/search.css"/>  
+    </head>
+    <body>
+        <header>  <!--NAME CONTROLLER BEGINS-->
+            <nav id="nav-user" class="top-fixed top-nav" role="navigation">
+                <div class="nav-container">
+                    <div class="nav-menu-items">
+                        <a class="nav-brand" href="/">
+                            <div id="logo" class="round-edge"></div>
+                            Study Tent
+                        </a>
+                        <div class="nav-menu-items-right" ng-controller="LoginController as login">
+                            <div ng-include src="$storage.logIn"></div>   
+                            <div><a href="/about">About</a></div>
+                            <script type="text/ng-template" id="logIn">
+                                <a ng-click="openLogin()">Log In</a>
+                            </script>
+                            <script type="text/ng-template" id="logOut">
+                                <a ng-click="logoutSubmit()">Log Out</a>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="map">
+            <div id="map-canvas"></div>
+            </section>
+            <section class="chat">
+                <div class="container">
+                    <div class="session col-md-4">
+                        <div id="chat-test-display" class="chatroom"></div>
+                    
+                        <form id="chat-test-message" class="input-group">
+                            <input type="text" placeholder="Enter Message..." class="form-control message">
+                            <span class="input-group-btn">
+                                <input class="btn btn-default" type="submit" value="Send">
+                            </span>
+                        </form>
+                    </div>
+                    <div class="session col-md-4">
+                        <div id="chat-group-display" class="chatroom"></div>
+                        
+                        <form id="chat-group-message" class="input-group">
+                            <input type="text" placeholder="Enter Message..." class="form-control message">
+                            <span class="input-group-btn">
+                                <input class="btn btn-default" type="submit" value="Send">
+                            </span>
+                        </form>
+                    </div>
+                    <div class="session col-md-4">
+                        <div id="chat-user-display" class="chatroom"></div>
+                        
+                        <form id="chat-user-message" class="input-group">
+                            <input type="text" placeholder="Enter Message..." class="form-control message">
+                            <span class="input-group-btn">
+                                <input class="btn btn-default" type="submit" value="Send">
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        <footer>
+        </footer>
+        
+        
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular.js"></script>
+        <script type="text/javascript" src="assets/js/ui-bootstrap-tpls-0.13.0.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular-route.min.js"></script>
+        <script type="text/javascript" src="assets/js/ngStorage.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places" type="text/javascript"></script>
+
+        <script type="text/javascript" src="assets/js/maps.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="assets/js/socket.io.js"></script>
+    </body>
+</html>

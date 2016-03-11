@@ -1,0 +1,19 @@
+
+<div class="container">
+    <div class="signup-text float-left">
+        <div class="image-tagline"></div>
+        <div class="image-desc"></div>
+    </div>
+    <div class="signup-form float-right" ng-controller="SignupController as signup">
+        <form novalidate role="form" ng-submit="registerSubmit()">
+            <div class="name-inputs">
+                <input type="text" name="first" placeholder="First Name" required ng-model="firstname">
+                <input type="text" name="last" placeholder="Last Name" required ng-model="lastname">
+            </div>
+            <input type="email" name="email" placeholder="Email" required ng-model="email">
+            <input type="password" name="password" placeholder="Password" required ng-model="password">
+            <input type="password" name="confirm" placeholder="Confirm Password" required ng-model="passconfirm">
+            <button class="btn btn-primary" type="submit">Sign up for free</button>
+        </form>                            
+    </div>
+</div>

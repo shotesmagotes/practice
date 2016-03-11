@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <span>Log In</span>
+    <button type="button" class="close" ng-click="cancel()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body login-form">
+    <a class="btn facebook-btn" href="/oauth/facebook">
+        <span class="oauth-icon"><i class="facebook-icon"></i></span>
+        <span class="oauth-text">Log in with Facebook</span>
+    </a>
+    <a class="btn google-btn" href="/oauth/google">
+        <span class="oauth-icon"><i class="google-icon"></i></span>
+        <span class="oauth-text">Log in with Google</span>
+    </a>
+   
+    <input type="text" name="username" placeholder="Email" required ng-model="username">
+    <input type="password" name="password" placeholder="Password" required ng-model="password"> 
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="loginSubmit()">Log In</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>
