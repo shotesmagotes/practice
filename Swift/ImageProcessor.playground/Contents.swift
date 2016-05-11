@@ -11,4 +11,4 @@ let channels = RGBAChannels(image: rgba!)
 
 var vector: [Float] = [1,3,4,5,2]
 
-sqrt(vector)
+
