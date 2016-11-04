@@ -9,6 +9,16 @@ let image = UIImage(named: "sample")
 let rgba = RGBAImage(image: image!)
 let channels = RGBAChannels(image: rgba!)
 
-var vector: [Float] = [1,3,4,5,2]
 
+FFT.create(channels.blue)
+FFT.create(channels.green)
+FFT.create(channels.red)
+ /*
+ API for filtering should give code like below:
+ 
+    var gb = GaussianBlur(rgba: RGBAImage)
+    gb.set_params(["std": 1])
+    var filteredImage:RGBAImage = gb.filter()
+    var image = filteredImage.toUIImage()
+*/
 

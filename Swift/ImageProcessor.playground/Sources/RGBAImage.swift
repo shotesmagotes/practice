@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 import Accelerate
 
 public struct Pixel {
@@ -127,69 +128,5 @@ public struct RGBAChannels {
     }
 }
 
-private class GaussianBlur {
-    private func filter(inout channel: RGBAChannels) {
-        
-    }
-}
 
-public class FFT {
-    private var splitComplex: DSPSplitComplex?
-    private var real: [Float]?
-    private var imaginary: [Float]?
-    private var weights: FFTSetup?
-    
-    init(input: [UInt8]) {
-        real = []
-        for i in 0..<input.count {
-            real!.append(Float(input[i]))
-        }
-        
-        imaginary = [Float](count: input.count, repeatedValue: 0.0)
-        splitComplex = DSPSplitComplex(realp: &real!, imagp: &imaginary!)
-        
-        let length = vDSP_Length(floor(log2(Float(input.count))))
-        let radix = FFTRadix(kFFTRadix2)
-        weights = vDSP_create_fftsetup(length, radix)
-    }
-    
-    public func fft2d(width: Int, height: Int) -> [Float] {
-        let length0 = vDSP_Length(floor(log2(Float(width))))
-        let length1 = vDSP_Length(floor(log2(Float(height))))
-        let count = width * height
-        
-        vDSP_fft2d_zip(weights!, &splitComplex!, 1, 0, length0, length1, FFTDirection(FFT_FORWARD))
-        
-        var magnitudes = [Float](count: count, repeatedValue: 0.0)
-        vDSP_zvmags(&splitComplex!, 1, &magnitudes, 1, vDSP_Length(count))
-        
-        var normalizedMagnitudes = [Float](count: count, repeatedValue: 0.0)
-        var scale: Float = 2.0 / Float(count)
-        vDSP_vsmul(sqrt(magnitudes), 1, &scale, &normalizedMagnitudes, 1, vDSP_Length(count))
-        
-        vDSP_destroy_fftsetup(weights!)
-        
-        return normalizedMagnitudes
-    }
-    
-    public func ifft2d(width: Int, height: Int) -> [Float] {
-        guard let fftWeights = weights else { return [Float]() }
-        
-        let length0 = vDSP_Length(floor(log2(Float(width))))
-        let length1 = vDSP_Length(floor(log2(Float(height))))
-        vDSP_fft2d_zip(fftWeights, &splitComplex!, 1, 0, length0, length1, FFTDirection(FFT_INVERSE))
-        
-        var magnitudes = [Float](count: width * height, repeatedValue: 0.0)
-        
-    }
-    
-    public func sqrt(x: [Float]) -> [Float] {
-        var n = Int32(x.count)
-        return withUnsafePointer(&n) {
-            var y = x
-            vvsqrtf(&y, x, $0)
-            return y
-        }
-    }
-}
 
