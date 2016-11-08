@@ -38,4 +38,9 @@ Use .gitignore to ignore certain files in the working directory that you would n
 3. Look at all the branches that exist, 
  
 Use git diff to see the code changes between modified files that have not been staged and the corresponding staged file. Use git diff --staged
-## 2.   
+## 2. Undoing changes
+1. Check the log of the repo using git log --oneline
+2. Checkout the hash of the commit found via the log to get to the repo you want to inspect. Use git checkout <commit hash> <optional file name>
+3. Look at the file or files to see if they match the state of the file you want to fall back to. Once done checkout the master branch again (or whatever branch you are working from) by using git checkout <branch name> 
+4. If you checked out only a file in step 2, use get checkout HEAD <file name> instead of git checkout <branch name> as outlined in step 3.
+
