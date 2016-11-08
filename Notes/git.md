@@ -2,6 +2,7 @@ Git cheat-sheet and concept notes:
 
 # Configuration
 Git uses the following config files in order of precedence:
+
 1. config (.git/config) of repository
 2. ~/.gitconfig or ~/.config/git/config specific to the user of the workstation
 3. /etc/gitconfig for all users on workstation (R/W from this file using command git config --system)
