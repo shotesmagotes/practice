@@ -32,8 +32,8 @@ Use .gitignore to ignore certain files in the working directory that you would n
 # Use Cases 
 ## 1. Revisiting a repo
 1. Check the status of the files in the repo using git status
-1a. If there are unstaged files, check the files differences with the stage using git diff
-1b. If there are modified staged files, check the files differences with the commits by using git diff --stage
+  a. If there are unstaged files, check the files differences with the stage using git diff
+  b. If there are modified staged files, check the files differences with the commits by using git diff --stage
 2. Check the message of the latest commits by using git log
 3. Look at all the branches that exist, 
  
