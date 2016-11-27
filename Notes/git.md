@@ -29,7 +29,7 @@ Use .gitignore to ignore certain files in the working directory that you would n
 * *git tag <tag name>* :: create a lightweight tag for your current commit
 * *git tag* :: lists all the tags for the repo
 * *git push <remote name> <tag name>* :: use this to push the specific tag to the remote to share with other users. To push all tags, replace the <tag name> with the flag --tags
-* *git branch <branch-name>* :: creates a new branch and has a pointer to the same commit as the master branch initially. This command does not switch to the newly created branch and move the HEAD pointer to the branch. Use git branch -d <branch-name> to delete the branch
+* *git branch <branch-name>* :: creates a new branch and has a pointer to the same commit as the master branch initially. This command does not switch to the newly created branch and move the HEAD pointer to the branch. Use git branch -d <branch-name> to delete the branch. Use git branch to show all branches and git branch -v to see the last commits along with all the branches
 * *git checkout <branch-name>* :: switches to the branch-name branch by changing HEAD to point to the branch. Use git checkout -b <branch-name> to create a new branch and switch to it
 * *git merge <branch-name>* :: merge the branch-name branch into the current branch. Does a fast-forward merge, where HEAD points to new commit of the merged branch, or merge-commit, where the commit has multiple parent commits
 
@@ -53,4 +53,5 @@ Use git diff to see the code changes between modified files that have not been s
 2. When you are finished with the branch, commit the changes and checkout the branch you would like to merge your newly created branch into (for example, if you just finished branch is3, and want to merge it into the master branch, do git checkout master, and then git merge is3)
 3. If your merge succeeds, there will be no conflicts and you will not need to make a new commit
 4. If there are merge conflicts, use git mergetools or open the files manually and replace the conflict texts with the appropriate code (you can find which files are conflicted by using git status)
+5. Commit the new code, often writing a longer message (thus using git commit without the -m flag) to annotate what the merge conflict was
 
