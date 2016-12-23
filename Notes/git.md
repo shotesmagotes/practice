@@ -15,7 +15,7 @@ Use .gitignore to ignore certain files in the working directory that you would n
 * *git log* :: gets the log of the commits and can be used with --oneline to make it short, and --decorate to print out the reference names
 * *git add <path/filename>* :: use to stage files
 * *git commit* :: use to commit files to the current branch. Add the -m flag to write a message with the commiti, and use --amend flag to update a commit that you've already made
-* *git diff* :: use to see changes of files between its staged version and the modified but unstaged version. Use --stageflag to compare the file between committed file 
+* *git diff* :: use to see changes of files between its staged version and the modified but unstaged version. Use --stage flag to compare the file between committed file 
 * *git rm <path/filename>* :: use to remove a file from the staging area and the working directory to untrack the file. Add the --cached flag in order to only remove the file from the staging area and not in the working directory 
 * *git remote* :: lists all the remotes for the repo. Add the -v flag to show the urls of the remote
 * *git remote add <shortname> <url>* :: adds a new remote with a given shorthand name
