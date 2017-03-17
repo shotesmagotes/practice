@@ -3,18 +3,12 @@
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
-Thumbs.db
+.*.swp
+# Compiled #
+.o
+.com
+.class
+.exe
+.so
+.dll
 
-
-*~
-*.com
-*.exe
-*.o
-*.so
-*.out
-*.swp
-
-*.log
-*.sql
-*.sqlite
