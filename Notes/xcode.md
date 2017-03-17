@@ -1,0 +1,9 @@
+# On Projects, Workspaces, Targets, and Schemes
+## Projects
+A *project* is the main structural component to building an application using xcode. The project contains source files, resources, and targets. The structure of a project allows you to group source files together with a common functionality. These source files do not need to all build to a specific application. Instead the project structure is meant to hold source files that are meant to build towards different architectures, operating systems, devices, etc. The way these source files are further organized for building purposes is the use of a target.
+
+A *target* builds towards a specific configuration, which may be specified for a particular device (iOS, OSX) or for a specific architecture (x86, i586), etc - pending there are cross compilers for these specific purposes. Therefore, a project may contain multiple targets building the same application towards different devices. Consequentially, you will have different source files that are meant for different files, which correspond to the build process specified by a target. 
+
+A *workspace* is a level above the project and is a way for the user to organize projects. Since projects may be broken down to the functionality of the application in question, there may be multiple applications that need to be connected together to make a final program. Therefore, workspaces come in handy when you rely on a sequential build of different targets producing functionally different applications. Projects in the same workspaces can create dependencies on different targets of each other. Therefore, project A can build after the project B's target is built, in order to build a final application.
+
+A *scheme* is closely tied to a target in that a target needs at least one scheme. Whereas a target specifies build configurations for a specific device, a scheme specifies the different  
