@@ -1,7 +1,7 @@
-#C++ Notes
+# C++ Notes
 
 # Contents
-* [Programming Abstractions in C++](#progabs)
+* [Programming Abstractions in C++](Programming Abstractions in C++ By Roberts and Zelenski)
 
 
 # <a name="progabs">Programming Abstractions in C++ By Roberts and Zelenski</a>
