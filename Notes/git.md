@@ -10,29 +10,29 @@ Git uses the following config files in order of precedence:
 Use .gitignore to ignore certain files in the working directory that you would not like git to track or show in the status. 
 
 # Cheat Sheet
-* *git clone <repo url>* :: copies a repo down to your working directory and adds an origin remote that connects to originating url
-* *git status* :: use to check for the status of each item in the working directory
-* *git log* :: gets the log of the commits and can be used with --oneline to make it short, and --decorate to print out the reference names
-* *git add <path/filename>* :: use to stage files
-* *git commit* :: use to commit files to the current branch. Add the -m flag to write a message with the commiti, and use --amend flag to update a commit that you've already made
-* *git diff* :: use to see changes of files between its staged version and the modified but unstaged version. Use --stage flag to compare the file between committed file 
-* *git rm <path/filename>* :: use to remove a file from the staging area and the working directory to untrack the file. Add the --cached flag in order to only remove the file from the staging area and not in the working directory 
-* *git remote* :: lists all the remotes for the repo. Add the -v flag to show the urls of the remote
-* *git remote add <shortname> <url>* :: adds a new remote with a given shorthand name
-* *git fetch <remote name>* :: gets the remote's data that you don't have yet, and downloads it to your local repo. It does not merge or modify your current working directory.
-* *git pull* :: fetches from remote master branch and merges it into you working directory
-* *git push <remote name> <branch name>* :: pushes the branch to the remote server
-* *git remote show <remote name>* :: shows details about remotes and their branches, and the remote-branch mapping info
-* *git remote rename <from remote name> <to remote name>* :: changes the remote name from 'from' to 'to'
-* *git remote rm <remote name>* :: removes a remote
-* *git tag -a <tag name> -m <message>* :: creates an annotated tag for the current commit
-* *git tag <tag name>* :: create a lightweight tag for your current commit
-* *git tag* :: lists all the tags for the repo
-* *git push <remote name> <tag name>* :: use this to push the specific tag to the remote to share with other users. To push all tags, replace the <tag name> with the flag --tags
-* *git branch <branch-name>* :: creates a new branch and has a pointer to the same commit as the master branch initially. This command does not switch to the newly created branch and move the HEAD pointer to the branch. Use git branch -d <branch-name> to delete the branch. Use git branch to show all branches and git branch -v to see the last commits along with all the branches
-* *git checkout <branch-name>* :: switches to the branch-name branch by changing HEAD to point to the branch. Use git checkout -b <branch-name> to create a new branch and switch to it
-* *git merge <branch-name>* :: merge the branch-name branch into the current branch. Does a fast-forward merge, where HEAD points to new commit of the merged branch, or merge-commit, where the commit has multiple parent commits
-
+* *git clone <repo url>* - copies a repo down to your working directory and adds an origin remote that connects to originating url
+* *git status* - use to check for the status of each item in the working directory
+* *git log* - gets the log of the commits and can be used with --oneline to make it short, and --decorate to print out the reference names
+* *git add <path/filename>* - use to stage files
+* *git commit* - use to commit files to the current branch. Add the -m flag to write a message with the commiti, and use --amend flag to update a commit that you've already made
+* *git diff* - use to see changes of files between its staged version and the modified but unstaged version. Use --stage flag to compare the file between committed file 
+* *git rm <path/filename>* - use to remove a file from the staging area and the working directory to untrack the file. Add the --cached flag in order to only remove the file from the staging area and not in the working directory 
+* *git remote* - lists all the remotes for the repo. Add the -v flag to show the urls of the remote
+* *git remote add <shortname> <url>* - adds a new remote with a given shorthand name
+* *git fetch <remote name>* - gets the remote's data that you don't have yet, and downloads it to your local repo. It does not merge or modify your current working directory.
+* *git pull* - fetches from remote master branch and merges it into you working directory
+* *git push <remote name> <branch name>* - pushes the branch to the remote server
+* *git remote show <remote name>* - shows details about remotes and their branches, and the remote-branch mapping info
+* *git remote rename <from remote name> <to remote name>* - changes the remote name from 'from' to 'to'
+* *git remote rm <remote name>* - removes a remote
+* *git tag -a <tag name> -m <message>* - creates an annotated tag for the current commit
+* *git tag <tag name>* - create a lightweight tag for your current commit
+* *git tag* - lists all the tags for the repo
+* *git push <remote name> <tag name>* - use this to push the specific tag to the remote to share with other users. To push all tags, replace the <tag name> with the flag --tags
+* *git branch <branch-name>* - creates a new branch and has a pointer to the same commit as the master branch initially. This command does not switch to the newly created branch and move the HEAD pointer to the branch. Use git branch -d <branch-name> to delete the branch. Use git branch to show all branches and git branch -v to see the last commits along with all the branches
+* *git checkout <branch-name>* - switches to the branch-name branch by changing HEAD to point to the branch. Use git checkout -b <branch-name> to create a new branch and switch to it
+* *git merge <branch-name>* - merge the branch-name branch into the current branch. Does a fast-forward merge, where HEAD points to new commit of the merged branch, or merge-commit, where the commit has multiple parent commits
+* *git clean* - cleans the working tree of untracked files. Use -n to see which files this command will remove, -X to remove ignored files, -d to remove dir 
 
 # Use Cases 
 ## 1. Revisiting a repo
