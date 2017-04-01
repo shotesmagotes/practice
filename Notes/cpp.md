@@ -24,3 +24,9 @@ You can use the declaration above in function prototypes and reference a functio
 Include string.h for use of strings in code. `string.c_str()` function allows you to convert a string object into a c string equivalent to a char array.
 You can create streams for strings as well using sstream. This allows you to act on a string as if it were a stream, and is useful for conversion from another type to a string.
  
+### Complexity Analysis
+Complexity analysis usually determines the worst case performance. However, there are other analysis methods as well, including average case analysis and amortized analysis. The differences in these complexity analysis of an algorithm are as follows:
+
+1. Average-case analysis assumes certain probabilistic characters of the inputs. The average case analysis covers the performance of the algorithm as the expected value of the performance given the probability distribution of the inputs.
+
+2. The amortized analysis provides an analysis of a sequence of execution of the algorithm in question, and averages the performance across the sequence of executions. Therefore, it does not consider a single run of the algorithm. This is useful in the cases where the algorithm has many different execution times using conditional branching and therefore one execution is not enough to determine the actual performance of the algorithm over a larger domain of inputs over a longer space of time. 
