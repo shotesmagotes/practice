@@ -1,9 +1,9 @@
-## GO Tutorial
+# GO Notes 
 
-# Pointers
+## Pointers
 Go has pointers but has no pointer arithmetic. Therefore, pointer arithmetic cannot be used alongside arrays. The pointers are typically 
 
-# Slices
+## Slices
 Slices are references to underlying arrays. Therefore, there still exists an upper bound to the length of a slice, and this is denoted as the slice's capacity - which denotes the length made up of the array starting from the slice's first position on the underlying array to the end of the array (not end of slice). For example:
 
 ``` 
