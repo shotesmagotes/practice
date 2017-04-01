@@ -17,7 +17,7 @@ and using the function pointer will be as simple as calling the function with ap
 ```
     return-type-name value = funcName(arguments)
 ```
-    You can use the declaration above in function prototypes and reference a function pointer.
+You can use the declaration above in function prototypes and reference a function pointer.
 
 
 ### Strings
