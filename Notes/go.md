@@ -20,6 +20,20 @@ exampleSlice = exampleSlice[2:] // [4,6,7]
 // to the second - capacity 3, length 1 
 exampleSlice = exampleSlice[:1] // [4]
 ```
-As you can see, the third example slice is a slice of the previous slice. The previous slice still uses the first slice's underlying array as the reference.
+As you can see, the third example slice is a slice of the previous slice. All slices in the example above use the same underlying array. The underlying array has a length of 5. Therefore, the second slice has a capacity of 3 because the second slice references the third element of the original slice, which has the same structure as its underlying array. 
 
-A slic
+A slice is a data structure, a descriptor, of the underlying array. The slice data structure holds a reference (a pointer) to the first element of the slice (not the underlying array), within the underlying array. Therefore, in the above example, the first slice, which is the same as the underlying array, will contain a pointer to the first element of the underlying array. The second slice will contain a pointer to the third element of the underlying array. The slice data structure also contains the length of the slice, which is the number of elements between the indices specified when slicing another slice or array in defining this slice, and the capacity of the slice, which is as described above. 
+
+There are three ways to create a slice - slicing an array, slicing a slice, and using the make built-in. Using the make built-in will provide you with a slice that references a zero valued underlying array. Therefore, it is a good tool to use when you would like to make a copy of a small amount of data, which was originally constructed via some slice that referenced a large underlying array. For example, in the following code, the read on the file will return a large slice referencing an entire file in memory. Without copying the small amount of data referenced, the garbage collector will not let go of the large underlying array that is the file. 
+
+```
+var digitRegExp = regexp.MustCompile("[0-9]+")
+
+func FindDigits(filename string) []byte {
+    b, _ := ioutil.ReadFile(filename)
+    return digitRegExp.Find(b)
+}
+```
+(taken from https://blog.golang.org/go-slices-usage-and-internals) 
+
+
