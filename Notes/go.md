@@ -1,9 +1,12 @@
-# GO Notes 
+# GO Notes
 
-## Pointers
+## Types
+Go offers a different set of types that depart from types conventionally seen in other programming langauges. The following is a list of peculiar types or types with functionality that differ from the established perception.
+### Pointers
 Go has pointers but has no pointer arithmetic. Therefore, pointer arithmetic cannot be used alongside arrays in the fashion typically found in C and C++. Go pointers are used for references to large values, such as that of structs or arrays, so that only the reference value is copied. Pointers are declared using the same notation as that found in C, and pointers to lvalues are made by using the **address of** operator.
 
-## Slices
+A pointer to an array still works and dereferencing such a pointer to obtain the array can be shortened to the form `a[i]`, if dereferncing to a specific element of an array. `a[i]` in this case would be equivalent to `(*a)[i]`.
+### Slices
 Slices are references to underlying arrays. Therefore, although there is no length specified in a slice declaration (in a slice definition there is with the capacity and length specified in the make built-in), there still exists an upper bound to the length of a slice, and this is denoted as the slice's capacity. The capacity of the slice denotes the length between the slice's first position on the underlying array to the end of the array (not end of slice). For example:
 
 ``` 
@@ -36,4 +39,7 @@ func FindDigits(filename string) []byte {
 ```
 (taken from https://blog.golang.org/go-slices-usage-and-internals) 
 
+### Interfaces
+Interface types are a set of method signatures (useful for polymorphism). A value of an interface type holds any type that implements the methods defined in the interface - this definition is sensitive down to whether the type is a pointer or not. That is, if the pointer of a type defines a method defined in an interface, the pointer type is an implementation of that interface but the underlying type by itself is not an implementation of the interface. Interface values can be thought of as an abstraction above concrete types in Go. That is, an interface type describes a concrete type and a value for that concrete type, prescribed on the common methods that the types share. Two different types (struct, slice, array, primitive types) with methods of the same signature, described by an interface, all fall within the interface value.
 
+The abstraction allows us to provide implementations of functions or composite types that deal with ambiguous types. 
