@@ -1,5 +1,10 @@
 # GO Notes
 
+## Packaging
+Packages can be made in two forms. One is as an executable, and the other is as a shared library. When creating an executable, you need to include a **main** package and a **main** function. When creating a shared library, the main package is omitted to let the compiler know that the program is not an executable. 
+
+A package can include an **init** function. This function will be invoked when importing the package. If the package importing such a package (with an **init** function) only wants to make use of the init function and not use any of the exported methods or data structures, the package must alias the package of interest with the underscore (_).
+
 ## Types
 Go offers a different set of types that depart from types conventionally seen in other programming langauges. The following is a list of peculiar types or types with functionality that differ from the established perception.
 ### Pointers
