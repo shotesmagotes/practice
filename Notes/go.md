@@ -3,7 +3,7 @@
 ## Packaging
 Packages can be made in two forms. One is as an executable, and the other is as a shared library. When creating an executable, you need to include a **main** package and a **main** function. When creating a shared library, the main package is omitted to let the compiler know that the program is not an executable. 
 
-A package can include an **init** function. This function will be invoked when importing the package. If the package importing such a package (with an **init** function) only wants to make use of the init function and not use any of the exported methods or data structures, the package must alias the package of interest with the underscore (_).
+A package can include an **init** function. This function will be invoked when importing the package. If the package importing such a package (with an **init** function) only wants to make use of the init function and not use any of the exported methods or data structures, the package must alias the package of interest with the underscore.
 
 ## Types
 Go offers a different set of types that depart from types conventionally seen in other programming langauges. The following is a list of peculiar types or types with functionality that differ from the established perception.
@@ -48,3 +48,24 @@ func FindDigits(filename string) []byte {
 Interface types are a set of method signatures (useful for polymorphism). A value of an interface type holds any type that implements the methods defined in the interface - this definition is sensitive down to whether the type is a pointer or not. That is, if the pointer of a type defines a method defined in an interface, the pointer type is an implementation of that interface but the underlying type by itself is not an implementation of the interface. Interface values can be thought of as an abstraction above concrete types in Go. That is, an interface type describes a concrete type and a value for that concrete type, prescribed on the common methods that the types share. Two different types (struct, slice, array, primitive types) with methods of the same signature, described by an interface, all fall within the interface value.
 
 The abstraction allows us to provide implementations of functions or composite types that deal with ambiguous types. 
+
+### Structs
+A struct can contain embedded fields or anonymous fields. These are fields with no field name but with types. Embedded fields must be declared with a valid type name or a pointer to a non-interface type. 
+
+### Type Assertions
+Type assertions convert a variable, x, of an interface type to some type, T, if the underlying type of the interface value x (the dynamic type that is set at runtime), is the same as the type T or it implements the type T if T is an interface type. If the underlying type of x is not identical to T if T is not an interface, or if x does not implement the interface type T, then a panic occurs. In an assignment statement for type assertion, the type assertion returns a second variable that is a boolean indicating whether the type assertion was successful. In this case of an assignment, there is no panic. 
+
+```
+var x interface{} = 7
+i := x.(int)
+
+type I interface{ m() }
+func f(y I) {
+    s := y.(string) // wrong because y's underlying type implements m() but the string type does not implement m()
+    r := y.(*io.Reader) // okay if the underlying type of y implements both m() and *io.Reader
+}
+
+v, ok := x.(string) // ok will be false and v will be ""
+```
+
+
