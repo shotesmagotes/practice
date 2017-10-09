@@ -67,5 +67,13 @@ func f(y I) {
 
 v, ok := x.(string) // ok will be false and v will be ""
 ```
+Type assertions are particularly useful for error handling. Suppose you create a custom error type, which inherets from another error type of another package. Furthermore, suppose you create a error type implementation that augments functionality with other methods on the struct that implements the error interface. In some cases you handle the error using calls to fmt package, printing the error message out, but in other cases you use type assertion to convert that error variable into the error type that you have implemented and call a specific method that returns more information regarding the error. 
 
+## Packages
+The following explains the conepts behind the standard io packages for golang.  
+`
 
+## Dictionary of Terms
+*Composite Literal*: An expression that constructs a value for a map, slice, array, or struct, and create a new value each time the composite literal expression is evaluated. There are subtle syntax shortcuts that can be used when you have composite literals of composite literals. 
+
+*Selector*: An expression that denotes a method or field of a variable. For instance, a selector expression of x.f denotes a selector f of variable x. The selector f may be a field or a method.

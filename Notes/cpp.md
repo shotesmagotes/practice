@@ -2,7 +2,7 @@
 
 ## Contents
 * [Programming Abstractions in C++](#progabs)
-
+* [C++ Programming Language](#stroustrup)
 
 ## <a name="progabs">Programming Abstractions in C++ By Roberts and Zelenski</a>
 
@@ -38,3 +38,33 @@ Complexity analysis usually determines the worst case performance. However, ther
 1. Average-case analysis assumes certain probabilistic characters of the inputs. The average case analysis covers the performance of the algorithm as the expected value of the performance given the probability distribution of the inputs.
 
 2. The amortized analysis provides an analysis of a sequence of execution of the algorithm in question, and averages the performance across the sequence of executions. Therefore, it does not consider a single run of the algorithm. This is useful in the cases where the algorithm has many different execution times using conditional branching and therefore one execution is not enough to determine the actual performance of the algorithm over a larger domain of inputs over a longer space of time. 
+
+## <a name="stroustrup">The C++ Programming Language (4th Edition) By Bjarne Stroustrup</a>
+### Types
+The following are the *Fundamental Types*:
+- Boolean type (bool)
+- Character types (char, wchar_t)
+- Integer types (int, long long)
+- Floating-point types (double, long double)
+- A type to signify absence of information (void)
+From fundamental types, we can construct other types using declarator operators:
+- Pointer types (\*)
+- Array types ([])
+- Reference types (&)
+Additionally, there are the user defined types of:
+- Data structures and classes
+- Enumeration types for values in sets (enum and enum class)
+
+For character types, the following exist: char, unsigned char, signed char, and wchar_t. For integer types, there are three forms: int, signed int, and unsigned int. Additionally, integer types come in four sizes: short, "plain", long, and long long. The actual sizes in bits are implementation defined. Usually long is a short-hand way for writing long int, short is a short int, long long is a long long int. 
+
+Each variable of a specific type has an alignment requirement, the number of bytes (chars, really) that are required in between successive addresses where an object of the type can be allocated. For example, the alignrment requirement for an int is 4 bytes usually, and for a char it is 1 byte. Thus, a char can be allocated at any address, because each successive address is located a byte away. An int on the other hand will need to be at an address that is a multiple of 4. Using alignas() specifier for a declaration, a user can specify how the variable with that declaration specifier is to be aligned.
+
+Declarations have 5 parts:
+- Optional prefix specifier (static, virtual..)
+- Base type (vector<double>, const int..)
+- Declarator optionally including a name (p[7], n, \*(\*)[])
+- Optional suffix function specifiers (const, noexcept..)
+- Optional initializer or function body (={7,5,3} or {return x;})
+
+Prefix specifier is an keyword (virtual, extern, constexpr) specifiying some non-type related attribute of what is being declared.
+
