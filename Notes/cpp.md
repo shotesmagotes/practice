@@ -66,5 +66,15 @@ Declarations have 5 parts:
 - Optional suffix function specifiers (const, noexcept..)
 - Optional initializer or function body (={7,5,3} or {return x;})
 
-Prefix specifier is an keyword (virtual, extern, constexpr) specifiying some non-type related attribute of what is being declared.
+Prefix specifier is an keyword (virtual, extern, constexpr) specifiying some non-type related attribute of what is being declared. A declarator is composed of a name and optional declarator operators:
+- prefix, \*, pointer
+- prefix, \*const, constant pointer
+- prefix, \*volatile, volatile pointer
+- prefix, &, lvalue reference
+- prefix, &&, rvalue reference
+- prefix, auto, function(using suffix return type)
+- postfix, [], array
+- postfix, (), function
+- postfix, ->, returns from function
+
 
