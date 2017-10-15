@@ -42,29 +42,29 @@ Complexity analysis usually determines the worst case performance. However, ther
 ## <a name="stroustrup">The C++ Programming Language (4th Edition) By Bjarne Stroustrup</a>
 ### Types
 The following are the *Fundamental Types*:
-- Boolean type (bool)
-- Character types (char, wchar_t)
-- Integer types (int, long long)
-- Floating-point types (double, long double)
-- A type to signify absence of information (void)
+- Boolean type (`bool`)
+- Character types (`char`, `wchar_t`)
+- Integer types (`int`, `long long`)
+- Floating-point types (`double`, `long double`)
+- A type to signify absence of information (`void`)
 From fundamental types, we can construct other types using declarator operators:
-- Pointer types (\*)
-- Array types ([])
-- Reference types (&)
+- Pointer types (`*`)
+- Array types (`[]`)
+- Reference types (`&`)
 Additionally, there are the user defined types of:
 - Data structures and classes
-- Enumeration types for values in sets (enum and enum class)
+- Enumeration types for values in sets (`enum` and `enum class`)
 
-For character types, the following exist: char, unsigned char, signed char, and wchar_t. For integer types, there are three forms: int, signed int, and unsigned int. Additionally, integer types come in four sizes: short, "plain", long, and long long. The actual sizes in bits are implementation defined. Usually long is a short-hand way for writing long int, short is a short int, long long is a long long int. 
+For character types, the following exist: `char`, `unsigned char`, `signed char`, and `wchar_t`. For integer types, there are three forms: `int`, `signed int`, and `unsigned int`. Additionally, integer types come in four sizes: `short`, "plain", `long`, and `long long`. The actual sizes in bits are implementation defined. Usually `long` is a short-hand way for writing `long int`, `short` is a `short int`, `long long` is a `long long int`. 
 
-Each variable of a specific type has an alignment requirement, the number of bytes (chars, really) that are required in between successive addresses where an object of the type can be allocated. For example, the alignrment requirement for an int is 4 bytes usually, and for a char it is 1 byte. Thus, a char can be allocated at any address, because each successive address is located a byte away. An int on the other hand will need to be at an address that is a multiple of 4. Using alignas() specifier for a declaration, a user can specify how the variable with that declaration specifier is to be aligned.
+Each variable of a specific type has an alignment requirement, the number of bytes (`chars`, really) that are required in between successive addresses where an object of the type can be allocated. For example, the alignrment requirement for an `int` is 4 bytes usually, and for a `char` it is 1 byte. Thus, a `char` can be allocated at any address, because each successive address is located a byte away. An `int` on the other hand will need to be at an address that is a multiple of 4. Using `alignas()` specifier for a declaration, a user can specify how the variable with that declaration specifier is to be aligned.
 
 Declarations have 5 parts:
-- Optional prefix specifier (static, virtual..)
-- Base type (vector<double>, const int..)
-- Declarator optionally including a name (p[7], n, \*(\*)[])
-- Optional suffix function specifiers (const, noexcept..)
-- Optional initializer or function body (={7,5,3} or {return x;})
+- Optional prefix specifier (`static`, `virtual`..)
+- Base type (`vector<double>`, `const int`..)
+- Declarator optionally including a name (`p[7]`, `n`, `\*(\*)[]`)
+- Optional suffix function specifiers (`const`, `noexcept`..)
+- Optional initializer or function body (`={7,5,3}` or `{return x;}`)
 
 Prefix specifier is an keyword (virtual, extern, constexpr) specifiying some non-type related attribute of what is being declared. A declarator is composed of a name and optional declarator operators:
 - prefix, \*, pointer
@@ -77,4 +77,15 @@ Prefix specifier is an keyword (virtual, extern, constexpr) specifiying some non
 - postfix, (), function
 - postfix, ->, returns from function
 
+Global scope identifiers that are hidden by a local scope idenitifier of the same name can be accessible by prefixing with the :: scope resolution operator.
 
+An initializer can be one of 4 syntactic styles:
+- X a1 {v};
+- X a2 = {v};
+- X a3 = v;
+- X a4(v);
+
+Prefer to use the first form with X a1 {v} rather than any other form, unless you have an auto variable. In the case of an auto variable, type deduction by the compiler may be confused and so the = initialization method should be preferred. Furthermore, initializing with {} disables type narrowing - that is if a type cannot be casted to another type because of possibilities of type conversion then it will not do so.
+
+#### lvalues and rvalues
+An lvalue is an *expression* that refers to an *object* - in this case, an object is a contiguous region of storage. Not all lvalues may be used on the left hand side of an assignment, although the term was originally conceived to portray that idea. An rvalue is a value that is not an lvalue, such as temporary values returned from functions.
